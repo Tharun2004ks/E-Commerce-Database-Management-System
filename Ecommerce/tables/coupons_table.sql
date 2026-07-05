@@ -1,0 +1,34 @@
+USE ecommerce_db;
+CREATE TABLE coupons (
+    coupon_id INT AUTO_INCREMENT,
+    coupon_code VARCHAR(20) NOT NULL,
+    discount_percentage DECIMAL(5 , 2 ),
+    minimum_purchase DECIMAL(10 , 2 ),
+    expiry_date DATE,
+    CONSTRAINT PK_COUPONS PRIMARY KEY (coupon_id),
+    CONSTRAINT UQ_COUPON_CODE UNIQUE (coupon_code)
+);
+INSERT INTO coupons(coupon_code,discount_percentage,minimum_purchase,expiry_date)
+VALUES
+('WELCOME10',10,500,'2027-12-31'),
+('SAVE20',20,1000,'2027-12-31'),
+('FIRST15',15,750,'2027-12-31'),
+('BIGSALE25',25,2000,'2027-12-31'),
+('MEGA30',30,3000,'2027-12-31'),
+('FEST40',40,4000,'2027-12-31'),
+('SUPER50',50,5000,'2027-12-31'),
+('NEWUSER',12,600,'2027-12-31'),
+('SHOP15',15,1200,'2027-12-31'),
+('DEAL18',18,1800,'2027-12-31'),
+('FLASH22',22,2200,'2027-12-31'),
+('SUMMER10',10,700,'2027-12-31'),
+('WINTER15',15,900,'2027-12-31'),
+('SPRING20',20,1500,'2027-12-31'),
+('DIWALI30',30,3500,'2027-12-31'),
+('PONGAL12',12,800,'2027-12-31'),
+('YEAR25',25,2500,'2027-12-31'),
+('SAVE35',35,4500,'2027-12-31'),
+('BONUS18',18,1600,'2027-12-31'),
+('OFFER40',40,6000,'2027-12-31');
+
+select * from coupons;
